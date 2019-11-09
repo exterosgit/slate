@@ -19,26 +19,24 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Exteros API! You can use our API to access Exteros API endpoints, which can get information on various cats, exteros, and breeds in our database.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 
 > To authorize, use this code:
 
 ```ruby
-require 'kittn'
+require 'exteros'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Exteros::APIClient.authorize!('meowmeowmeow')
 ```
 
 ```python
-import kittn
+import exteros
 
-api = kittn.authorize('meowmeowmeow')
+api = exteros.authorize('meowmeowmeow')
 ```
 
 ```shell
@@ -48,16 +46,16 @@ curl "api_endpoint_here"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const exteros = require('exteros');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = exteros.authorize('meowmeowmeow');
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Exteros uses API keys to allow access to the API. You can register a new Exteros API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Exteros expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
@@ -65,34 +63,34 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Customers
 
-## Get All Kittens
+## Get Customers
 
 ```ruby
-require 'kittn'
+require 'exteros'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+api = Exteros::APIClient.authorize!('meowmeowmeow')
+api.exteros.get
 ```
 
 ```python
-import kittn
+import exteros
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+api = exteros.authorize('meowmeowmeow')
+api.exteros.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://api.exteros.com"
   -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const exteros = require('exteros');
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+let api = exteros.authorize('meowmeowmeow');
+let exteros = api.exteros.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -116,49 +114,49 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all exteros.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://api.exteros.com`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+available | true | If set to false, the result will include exteros that have already been adopted.
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Customer
 
 ```ruby
-require 'kittn'
+require 'exteros'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+api = Exteros::APIClient.authorize!('meowmeowmeow')
+api.exteros.get(2)
 ```
 
 ```python
-import kittn
+import exteros
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+api = exteros.authorize('meowmeowmeow')
+api.exteros.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "http://example.com/api/exteros/2"
   -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const exteros = require('exteros');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+let api = exteros.authorize('meowmeowmeow');
+let max = api.exteros.get(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -179,61 +177,10 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/exteros/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-

@@ -449,7 +449,7 @@ This endpoint retrieves all customers.
 
 Parameter |  Default  | Description
 --------- | ------- | -----------
-info | false  | Retrieve additional information about each store, i.e., parent location, type of store.
+info | false  | Retrieve additional information about each location: company/brand, parent location, child locations, type of store/location.
 
 ### URL Parameters
 

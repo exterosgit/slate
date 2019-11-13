@@ -182,31 +182,31 @@ let exteros = api.exteros.get();
 [
   {
     "hr": 9,
-    "impressions": 50
+    "discoveries": 50
   },
   {
     "hr": 10,
-    "impressions": 150
+    "discoveries": 150
   },
   {
     "hr": 11,
-    "impressions": 200
+    "discoveries": 200
   },
   {
     "hr": 12,
-    "impressions": 250
+    "discoveries": 250
   },
   {
     "hr": 13,
-    "impressions": 200
+    "discoveries": 200
   },
   {
     "hr": 14,
-    "impressions": 100
+    "discoveries": 100
   },
   {
     "hr": 15,
-    "impressions": 0
+    "discoveries": 0
   }
 ]
 ```
@@ -266,31 +266,31 @@ let exteros = api.exteros.get();
 [
   {
     "hr": 9,
-    "impressions": 0
+    "engagements": 0
   },
   {
     "hr": 10,
-    "impressions": 100
+    "engagements": 100
   },
   {
     "hr": 11,
-    "impressions": 150
+    "engagements": 150
   },
   {
     "hr": 12,
-    "impressions": 200
+    "engagements": 200
   },
   {
     "hr": 13,
-    "impressions": 150
+    "engagements": 150
   },
   {
     "hr": 14,
-    "impressions": 50
+    "engagements": 50
   },
   {
     "hr": 15,
-    "impressions": 0
+    "engagements": 0
   }
 ]
 ```
@@ -350,31 +350,31 @@ let exteros = api.exteros.get();
 [
   {
     "hr": 9,
-    "impressions": 0
+    "interactions": 0
   },
   {
     "hr": 10,
-    "impressions": 50
+    "interactions": 50
   },
   {
     "hr": 11,
-    "impressions": 100
+    "interactions": 100
   },
   {
     "hr": 12,
-    "impressions": 150
+    "interactions": 150
   },
   {
     "hr": 13,
-    "impressions": 100
+    "interactions": 100
   },
   {
     "hr": 14,
-    "impressions": 0
+    "interactions": 0
   },
   {
     "hr": 15,
-    "impressions": 0
+    "interactions": 0
   }
 ]
 ```
@@ -445,49 +445,11 @@ This endpoint retrieves all customers.
 
 `GET https://api.exteros.com/v1/locations`
 
-## Get Location Info
+### Query Parameters
 
-```ruby
-require 'exteros'
-
-api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
-```
-
-```python
-import exteros
-
-api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
-```
-
-```shell
-curl "https://api.exteros.com/v1/locations/info/madison-ave"
-  -H "Authorization: YOUR_API_KEY"
-```
-
-```javascript
-const exteros = require('exteros');
-
-let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "lastUpdate": "2020-05-30T09:30:10Z"
-  }
-]
-```
-
-This endpoint retrieves all customers.
-
-### HTTP Request
-
-`GET https://api.exteros.com/v1/locations/info/<location>`
+Parameter |  Default  | Description
+--------- | ------- | -----------
+info | false  | Retrieve additional information about each store, i.e., parent location, type of store.
 
 ### URL Parameters
 
@@ -538,12 +500,6 @@ This endpoint retrieves all customers.
 ### HTTP Request
 
 `GET https://api.exteros.com/v1/locations/last-update/<location>`
-
-### Query Parameters
-
-Parameter |  Default   | Description
---------- | ------- | -----------
-location | string | The name of a store, shop, or specific zone/region.
 
 ### URL Parameters
 

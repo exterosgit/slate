@@ -81,7 +81,7 @@ api.exteros.get()
 ```
 
 ```shell
-curl "https://api.exteros.com/v1/traffic/impression-counts/madison-ave/2020-01-01"
+curl "https://api.exteros.com/v1/traffic/impression-counts/madison-ave-store/2020-01-01"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -165,7 +165,7 @@ api.exteros.get()
 ```
 
 ```shell
-curl "https://api.exteros.com/v1/traffic/discovery-counts/madison-ave/2020-01-01"
+curl "https://api.exteros.com/v1/traffic/discovery-counts/madison-ave-store/2020-01-01"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -249,7 +249,7 @@ api.exteros.get()
 ```
 
 ```shell
-curl "https://api.exteros.com/v1/traffic/engagement-counts/madison-ave/2020-01-01"
+curl "https://api.exteros.com/v1/traffic/engagement-counts/madison-ave-store/2020-01-01"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -333,7 +333,7 @@ api.exteros.get()
 ```
 
 ```shell
-curl "https://api.exteros.com/v1/traffic/interaction-counts/madison-ave/2020-01-01"
+curl "https://api.exteros.com/v1/traffic/interaction-counts/madison-ave-store/2020-01-01"
   -H "Authorization: YOUR_API_KEY"
 ```
 
@@ -431,10 +431,10 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "location-name": "madison-ave",
+    "location-name": "madison-ave-store",
   },
   {
-    "location-name": "5th-ave",
+    "location-name": "5th-ave-popup",
   }
 ]
 ```
@@ -474,7 +474,7 @@ api.exteros.get()
 ```
 
 ```shell
-curl "https://api.exteros.com/v1/locations/last-update/madison-ave"
+curl "https://api.exteros.com/v1/locations/last-update/madison-ave-store"
   -H "Authorization: YOUR_API_KEY"
 ```
 

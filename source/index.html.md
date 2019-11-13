@@ -127,7 +127,7 @@ let exteros = api.exteros.get();
 ]
 ```
 
-This endpoint retrieves all customers.
+This endpoint retrieves impression counts - the number of people passing by a given location.
 
 ### HTTP Request
 
@@ -193,7 +193,7 @@ let exteros = api.exteros.get();
 ]
 ```
 
-This endpoint retrieves all customers.
+This endpoint retrieves discovery counts - the number of people spending at least 3 seconds at a given location.
 
 ### HTTP Request
 
@@ -258,7 +258,7 @@ let exteros = api.exteros.get();
 ]
 ```
 
-This endpoint retrieves all customers.
+This endpoint retrieves engagement counts - the number of people spending at least 10 seconds at a given location.
 
 ### HTTP Request
 
@@ -323,7 +323,7 @@ let exteros = api.exteros.get();
 ]
 ```
 
-This endpoint retrieves all customers.
+This endpoint retrieves interaction counts - the number of people touching or picking up a product at a given location.
 
 ### HTTP Request
 

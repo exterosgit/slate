@@ -97,14 +97,32 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "MadisonAve",
-    "type": "groundfloor",
+    "hr": 9,
+    "impressions": 100
   },
   {
-    "id": 2,
-    "name": "5thAve",
-    "type": "groundfloor",
+    "hr": 10,
+    "impressions": 200
+  },
+  {
+    "hr": 11,
+    "impressions": 250
+  },
+  {
+    "hr": 12,
+    "impressions": 300
+  },
+  {
+    "hr": 13,
+    "impressions": 250
+  },
+  {
+    "hr": 14,
+    "impressions": 150
+  },
+  {
+    "hr": 15,
+    "impressions": 50
   }
 ]
 ```

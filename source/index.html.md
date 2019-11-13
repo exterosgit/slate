@@ -137,7 +137,9 @@ This endpoint retrieves all customers.
 
 Parameter |  Default  | Description
 --------- | ------- | -----------
-'interval' 
+hour | ''  | Retrieve impression counts for a specific hour.
+interval | 'hour' | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+
 
 ### URL Parameters
 

@@ -138,7 +138,7 @@ This endpoint retrieves impression counts - the number of people passing by a gi
 Parameter |  Default  | Description
 --------- | ------- | -----------
 hour | 'all'  | Retrieve impression counts for a specific hour.
-interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+interval | 'hour' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
 
 
 ### URL Parameters
@@ -181,14 +181,32 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "MadisonAve",
-    "type": "groundfloor",
+    "hr": 9,
+    "impressions": 50
   },
   {
-    "id": 2,
-    "name": "5thAve",
-    "type": "groundfloor",
+    "hr": 10,
+    "impressions": 150
+  },
+  {
+    "hr": 11,
+    "impressions": 200
+  },
+  {
+    "hr": 12,
+    "impressions": 250
+  },
+  {
+    "hr": 13,
+    "impressions": 200
+  },
+  {
+    "hr": 14,
+    "impressions": 100
+  },
+  {
+    "hr": 15,
+    "impressions": 0
   }
 ]
 ```
@@ -204,7 +222,7 @@ This endpoint retrieves discovery counts - the number of people spending at leas
 Parameter |  Default  | Description
 --------- | ------- | -----------
 hour | 'all'  | Retrieve discovery counts for a specific hour.
-interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+interval | 'hour' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
 
 
 ### URL Parameters
@@ -247,14 +265,32 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "MadisonAve",
-    "type": "groundfloor",
+    "hr": 9,
+    "impressions": 0
   },
   {
-    "id": 2,
-    "name": "5thAve",
-    "type": "groundfloor",
+    "hr": 10,
+    "impressions": 100
+  },
+  {
+    "hr": 11,
+    "impressions": 150
+  },
+  {
+    "hr": 12,
+    "impressions": 200
+  },
+  {
+    "hr": 13,
+    "impressions": 150
+  },
+  {
+    "hr": 14,
+    "impressions": 50
+  },
+  {
+    "hr": 15,
+    "impressions": 0
   }
 ]
 ```
@@ -270,7 +306,7 @@ This endpoint retrieves engagement counts - the number of people spending at lea
 Parameter |  Default  | Description
 --------- | ------- | -----------
 hour | 'all'  | Retrieve engagement counts for a specific hour.
-interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+interval | 'hour' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
 
 
 ### URL Parameters
@@ -313,14 +349,32 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "MadisonAve",
-    "type": "groundfloor",
+    "hr": 9,
+    "impressions": 0
   },
   {
-    "id": 2,
-    "name": "5thAve",
-    "type": "groundfloor",
+    "hr": 10,
+    "impressions": 50
+  },
+  {
+    "hr": 11,
+    "impressions": 100
+  },
+  {
+    "hr": 12,
+    "impressions": 150
+  },
+  {
+    "hr": 13,
+    "impressions": 100
+  },
+  {
+    "hr": 14,
+    "impressions": 0
+  },
+  {
+    "hr": 15,
+    "impressions": 0
   }
 ]
 ```
@@ -332,7 +386,7 @@ This endpoint retrieves interaction counts - the number of people touching or pi
 Parameter |  Default  | Description
 --------- | ------- | -----------
 hour | 'all'  | Retrieve interaction counts for a specific hour.
-interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+interval | 'hour' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
 
 
 ### URL Parameters
@@ -377,30 +431,10 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "id": 1,
-    "brand": "Exteros"
-    "name": "MadisonAve",
-    "type": "store",
+    "location-name": "madison-ave",
   },
   {
-    "id": 2,
-    "brand": "Exteros"
-    "name": "WomensDepartment",
-    "type": "groundfloor",
-    "parent": 1,
-  },
-  {
-    "id": 3,
-    "brand": "Exteros"
-    "name": "MensDepartment",
-    "type": "secondfloor",
-    "parent": 1,
-  },
-  {
-    "id": 4,
-    "brand": "Exteros"
-    "name": "5thAve",
-    "type": "popup",
+    "location-name": "5th-ave",
   }
 ]
 ```

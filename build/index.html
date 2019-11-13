@@ -365,13 +365,13 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </thead><tbody>
 <tr>
 <td>hour</td>
-<td>&#39;&#39;</td>
+<td>&#39;all&#39;</td>
 <td>Retrieve impression counts for a specific hour.</td>
 </tr>
 <tr>
 <td>interval</td>
-<td>&#39;hour&#39;</td>
-<td>Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.</td>
+<td>&#39;day&#39;</td>
+<td>Retrieve counts according to the time specified time interval. Options: &#39;day&#39;, &#39;hour&#39;, &#39;15min&#39;</td>
 </tr>
 </tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
@@ -387,7 +387,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 <tr>
 <td>date</td>
-<td>Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
+<td>Date of impression Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
 </tr>
 </tbody></table>
 <h2 id='get-discovery-counts'>Get Discovery Counts</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'exteros'</span>
@@ -433,14 +433,14 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>location</td>
-<td>string</td>
-<td>The name of a store, shop, or specific zone/region.</td>
+<td>hour</td>
+<td>&#39;all&#39;</td>
+<td>Retrieve discovery counts for a specific hour.</td>
 </tr>
 <tr>
-<td>date</td>
-<td>date</td>
-<td>Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.</td>
+<td>interval</td>
+<td>&#39;day&#39;</td>
+<td>Retrieve counts according to the time specified time interval. Options: &#39;day&#39;, &#39;hour&#39;, &#39;15min&#39;</td>
 </tr>
 </tbody></table>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -456,7 +456,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 <tr>
 <td>date</td>
-<td>Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
+<td>Date of discovery Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
 </tr>
 </tbody></table>
 <h2 id='get-engagement-counts'>Get Engagement Counts</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'exteros'</span>
@@ -502,14 +502,14 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>location</td>
-<td>string</td>
-<td>The name of a store, shop, or specific zone/region.</td>
+<td>hour</td>
+<td>&#39;all&#39;</td>
+<td>Retrieve engagement counts for a specific hour.</td>
 </tr>
 <tr>
-<td>date</td>
-<td>date-time</td>
-<td>Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.</td>
+<td>interval</td>
+<td>&#39;day&#39;</td>
+<td>Retrieve counts according to the time specified time interval. Options: &#39;day&#39;, &#39;hour&#39;, &#39;15min&#39;</td>
 </tr>
 </tbody></table>
 <h3 id='url-parameters-3'>URL Parameters</h3>
@@ -525,7 +525,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 <tr>
 <td>date</td>
-<td>Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
+<td>Date of engagement Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
 </tr>
 </tbody></table>
 <h2 id='get-interaction-counts'>Get Interaction Counts</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'exteros'</span>
@@ -560,8 +560,6 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves interaction counts - the number of people touching or picking up a product at a given location.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://api.exteros.com/v1/traffic/interaction-counts/&lt;location&gt;/&lt;date&gt;</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -571,14 +569,30 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
+<td>hour</td>
+<td>&#39;all&#39;</td>
+<td>Retrieve interaction counts for a specific hour.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>&#39;day&#39;</td>
+<td>Retrieve counts according to the time specified time interval. Options: &#39;day&#39;, &#39;hour&#39;, &#39;15min&#39;</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
 <td>location</td>
-<td>string</td>
-<td>The name of a store, shop, or specific zone/region.</td>
+<td>The name of a store, shop, or specific zone/region to retrieve.</td>
 </tr>
 <tr>
 <td>date</td>
-<td>date-time</td>
-<td>Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.</td>
+<td>Date of interaction Traffic to retrieve. Use format “yyyy-MM-dd&quot;.</td>
 </tr>
 </tbody></table>
 <h1 id='locations'>Locations</h1><h2 id='get-locations'>Get Locations</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'exteros'</span>
@@ -629,7 +643,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all customers.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.exteros.com/v1/locations</code></p>
 <h2 id='get-location-info'>Get Location Info</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'exteros'</span>
 
@@ -656,9 +670,9 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all customers.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.exteros.com/v1/locations/info/&lt;location&gt;</code></p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -695,7 +709,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all customers.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://api.exteros.com/v1/locations/last-update/&lt;location&gt;</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
@@ -711,7 +725,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 <td>The name of a store, shop, or specific zone/region.</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>

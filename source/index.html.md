@@ -137,8 +137,8 @@ This endpoint retrieves impression counts - the number of people passing by a gi
 
 Parameter |  Default  | Description
 --------- | ------- | -----------
-hour | ''  | Retrieve impression counts for a specific hour.
-interval | 'hour' | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+hour | 'all'  | Retrieve impression counts for a specific hour.
+interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
 
 
 ### URL Parameters
@@ -146,7 +146,7 @@ interval | 'hour' | Date of Customer Traffic. When using a format like “yyyy-M
 Parameter | Description
 --------- | -----------
 location | The name of a store, shop, or specific zone/region to retrieve.
-date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
+date | Date of impression Traffic to retrieve. Use format “yyyy-MM-dd".
 
 ## Get Discovery Counts
 
@@ -203,15 +203,16 @@ This endpoint retrieves discovery counts - the number of people spending at leas
 
 Parameter |  Default  | Description
 --------- | ------- | -----------
-location | string | The name of a store, shop, or specific zone/region.
-date | date | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+hour | 'all'  | Retrieve discovery counts for a specific hour.
+interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 location | The name of a store, shop, or specific zone/region to retrieve.
-date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
+date | Date of discovery Traffic to retrieve. Use format “yyyy-MM-dd".
 
 ## Get Engagement Counts
 
@@ -266,17 +267,18 @@ This endpoint retrieves engagement counts - the number of people spending at lea
 
 ### Query Parameters
 
-Parameter |  Default   | Description
+Parameter |  Default  | Description
 --------- | ------- | -----------
-location | string | The name of a store, shop, or specific zone/region.
-date | date-time | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+hour | 'all'  | Retrieve engagement counts for a specific hour.
+interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 location | The name of a store, shop, or specific zone/region to retrieve.
-date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
+date | Date of engagement Traffic to retrieve. Use format “yyyy-MM-dd".
 
 ## Get Interaction Counts
 
@@ -325,16 +327,20 @@ let exteros = api.exteros.get();
 
 This endpoint retrieves interaction counts - the number of people touching or picking up a product at a given location.
 
-### HTTP Request
-
-`GET https://api.exteros.com/v1/traffic/interaction-counts/<location>/<date>`
-
 ### Query Parameters
 
-Parameter |  Default   | Description
+Parameter |  Default  | Description
 --------- | ------- | -----------
-location | string | The name of a store, shop, or specific zone/region.
-date | date-time | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+hour | 'all'  | Retrieve interaction counts for a specific hour.
+interval | 'day' | Retrieve counts according to the time specified time interval. Options: 'day', 'hour', '15min'
+
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+location | The name of a store, shop, or specific zone/region to retrieve.
+date | Date of interaction Traffic to retrieve. Use format “yyyy-MM-dd".
 
 # Locations
 

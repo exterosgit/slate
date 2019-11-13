@@ -64,7 +64,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 
 # Traffic
 
-## Get Impression Traffic
+## Get Impression Counts
 
 ```ruby
 require 'exteros'

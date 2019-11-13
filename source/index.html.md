@@ -8,7 +8,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,7 +18,7 @@ search: true
 
 # Introduction
 
-Welcome to the Exteros API! You can use our API to access Exteros API endpoints, which can get information on various cats, exteros, and breeds in our database.
+Welcome to the Exteros API! You can use our API to access Exteros API endpoints, which can get information on Customer Traffic and Staff in our database.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
@@ -30,66 +29,66 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 ```ruby
 require 'exteros'
 
-api = Exteros::APIClient.authorize!('meowmeowmeow')
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
 ```
 
 ```python
 import exteros
 
-api = exteros.authorize('meowmeowmeow')
+api = exteros.authorize('YOUR_API_KEY')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: YOUR_API_KEY"
 ```
 
 ```javascript
 const exteros = require('exteros');
 
-let api = exteros.authorize('meowmeowmeow');
+let api = exteros.authorize('YOUR_API_KEY');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `YOUR_API_KEY` with your API key.
 
-Exteros uses API keys to allow access to the API. You can register a new Exteros API key at our [developer portal](http://example.com/developers).
+Exteros uses API keys to allow access to the API. You can register a new Exteros API key at our [developer portal](https://dashboard.exteros.com).
 
 Exteros expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: YOUR_API_KEY`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </aside>
 
-# Customers
+# Traffic
 
-## Get Customers
+## Get Impression Traffic
 
 ```ruby
 require 'exteros'
 
-api = Exteros::APIClient.authorize!('meowmeowmeow')
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
 api.exteros.get
 ```
 
 ```python
 import exteros
 
-api = exteros.authorize('meowmeowmeow')
+api = exteros.authorize('YOUR_API_KEY')
 api.exteros.get()
 ```
 
 ```shell
-curl "http://api.exteros.com"
-  -H "Authorization: meowmeowmeow"
+curl "https://api.exteros.com/v1/traffic/impression-counts/madison-ave/2020-01-01"
+  -H "Authorization: YOUR_API_KEY"
 ```
 
 ```javascript
 const exteros = require('exteros');
 
-let api = exteros.authorize('meowmeowmeow');
+let api = exteros.authorize('YOUR_API_KEY');
 let exteros = api.exteros.get();
 ```
 
@@ -99,88 +98,395 @@ let exteros = api.exteros.get();
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "name": "MadisonAve",
+    "type": "groundfloor",
   },
   {
     "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "name": "5thAve",
+    "type": "groundfloor",
   }
 ]
 ```
 
-This endpoint retrieves all exteros.
+This endpoint retrieves all customers.
 
 ### HTTP Request
 
-`GET http://api.exteros.com`
+`GET https://api.exteros.com/v1/traffic/impression-counts/<location>/<date>`
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter |  Default  | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include exteros that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Customer
-
-```ruby
-require 'exteros'
-
-api = Exteros::APIClient.authorize!('meowmeowmeow')
-api.exteros.get(2)
-```
-
-```python
-import exteros
-
-api = exteros.authorize('meowmeowmeow')
-api.exteros.get(2)
-```
-
-```shell
-curl "http://example.com/api/exteros/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const exteros = require('exteros');
-
-let api = exteros.authorize('meowmeowmeow');
-let max = api.exteros.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/exteros/<ID>`
+'interval' 
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+location | The name of a store, shop, or specific zone/region to retrieve.
+date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
+
+## Get Discovery Traffic
+
+```ruby
+require 'exteros'
+
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
+api.exteros.get
+```
+
+```python
+import exteros
+
+api = exteros.authorize('YOUR_API_KEY')
+api.exteros.get()
+```
+
+```shell
+curl "https://api.exteros.com/v1/traffic/discovery-counts/madison-ave/2020-01-01"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+```javascript
+const exteros = require('exteros');
+
+let api = exteros.authorize('YOUR_API_KEY');
+let exteros = api.exteros.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "MadisonAve",
+    "type": "groundfloor",
+  },
+  {
+    "id": 2,
+    "name": "5thAve",
+    "type": "groundfloor",
+  }
+]
+```
+
+This endpoint retrieves all customers.
+
+### HTTP Request
+
+`GET https://api.exteros.com/v1/traffic/discovery-counts/<location>/<date>`
+
+### Query Parameters
+
+Parameter |  Default  | Description
+--------- | ------- | -----------
+location | string | The name of a store, shop, or specific zone/region.
+date | date | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+location | The name of a store, shop, or specific zone/region to retrieve.
+date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
+
+## Get Engagement Traffic
+
+```ruby
+require 'exteros'
+
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
+api.exteros.get
+```
+
+```python
+import exteros
+
+api = exteros.authorize('YOUR_API_KEY')
+api.exteros.get()
+```
+
+```shell
+curl "https://api.exteros.com/v1/traffic/engagement-counts/madison-ave/2020-01-01"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+```javascript
+const exteros = require('exteros');
+
+let api = exteros.authorize('YOUR_API_KEY');
+let exteros = api.exteros.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "MadisonAve",
+    "type": "groundfloor",
+  },
+  {
+    "id": 2,
+    "name": "5thAve",
+    "type": "groundfloor",
+  }
+]
+```
+
+This endpoint retrieves all customers.
+
+### HTTP Request
+
+`GET https://api.exteros.com/v1/traffic/engadgment-counts/<location>/<date>`
+
+### Query Parameters
+
+Parameter |  Default   | Description
+--------- | ------- | -----------
+location | string | The name of a store, shop, or specific zone/region.
+date | date-time | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+location | The name of a store, shop, or specific zone/region to retrieve.
+date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
+
+## Get Interaction Traffic
+
+```ruby
+require 'exteros'
+
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
+api.exteros.get
+```
+
+```python
+import exteros
+
+api = exteros.authorize('YOUR_API_KEY')
+api.exteros.get()
+```
+
+```shell
+curl "https://api.exteros.com/v1/traffic/interaction-counts/madison-ave/2020-01-01"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+```javascript
+const exteros = require('exteros');
+
+let api = exteros.authorize('YOUR_API_KEY');
+let exteros = api.exteros.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "MadisonAve",
+    "type": "groundfloor",
+  },
+  {
+    "id": 2,
+    "name": "5thAve",
+    "type": "groundfloor",
+  }
+]
+```
+
+This endpoint retrieves all customers.
+
+### HTTP Request
+
+`GET https://api.exteros.com/v1/traffic/interaction-counts/<location>/<date>`
+
+### Query Parameters
+
+Parameter |  Default   | Description
+--------- | ------- | -----------
+location | string | The name of a store, shop, or specific zone/region.
+date | date-time | Date of Customer Traffic. When using a format like “yyyy-MM-dd’T’HH:mm:ss’Z’”, always use GMT time. When using a format like “yyyy-MM-dd’T’HH:mm:ss”, you should use local time and  specify the time zone.
+
+# Locations
+
+## Get Locations
+
+```ruby
+require 'exteros'
+
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
+api.exteros.get
+```
+
+```python
+import exteros
+
+api = exteros.authorize('YOUR_API_KEY')
+api.exteros.get()
+```
+
+```shell
+curl "https://api.exteros.com/v1/locations"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+```javascript
+const exteros = require('exteros');
+
+let api = exteros.authorize('YOUR_API_KEY');
+let exteros = api.exteros.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "brand": "Exteros"
+    "name": "MadisonAve",
+    "type": "store",
+  },
+  {
+    "id": 2,
+    "brand": "Exteros"
+    "name": "WomensDepartment",
+    "type": "groundfloor",
+    "parent": 1,
+  },
+  {
+    "id": 3,
+    "brand": "Exteros"
+    "name": "MensDepartment",
+    "type": "secondfloor",
+    "parent": 1,
+  },
+  {
+    "id": 4,
+    "brand": "Exteros"
+    "name": "5thAve",
+    "type": "popup",
+  }
+]
+```
+
+This endpoint retrieves all customers.
+
+### HTTP Request
+
+`GET https://api.exteros.com/v1/locations`
+
+## Get Location Info
+
+```ruby
+require 'exteros'
+
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
+api.exteros.get
+```
+
+```python
+import exteros
+
+api = exteros.authorize('YOUR_API_KEY')
+api.exteros.get()
+```
+
+```shell
+curl "https://api.exteros.com/v1/locations/info/madison-ave"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+```javascript
+const exteros = require('exteros');
+
+let api = exteros.authorize('YOUR_API_KEY');
+let exteros = api.exteros.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "lastUpdate": "2020-05-30T09:30:10Z"
+  }
+]
+```
+
+This endpoint retrieves all customers.
+
+### HTTP Request
+
+`GET https://api.exteros.com/v1/locations/info/<location>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+location | The name of a store, shop, or specific zone/region to retrieve.
+
+## Get Last Location Update
+
+```ruby
+require 'exteros'
+
+api = Exteros::APIClient.authorize!('YOUR_API_KEY')
+api.exteros.get
+```
+
+```python
+import exteros
+
+api = exteros.authorize('YOUR_API_KEY')
+api.exteros.get()
+```
+
+```shell
+curl "https://api.exteros.com/v1/locations/last-update/madison-ave"
+  -H "Authorization: YOUR_API_KEY"
+```
+
+```javascript
+const exteros = require('exteros');
+
+let api = exteros.authorize('YOUR_API_KEY');
+let exteros = api.exteros.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "lastUpdate": "2020-05-30T09:30:10Z"
+  }
+]
+```
+
+This endpoint retrieves all customers.
+
+### HTTP Request
+
+`GET https://api.exteros.com/v1/locations/last-update/<location>`
+
+### Query Parameters
+
+Parameter |  Default   | Description
+--------- | ------- | -----------
+location | string | The name of a store, shop, or specific zone/region.
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+location | The name of a store, shop, or specific zone/region to retrieve.

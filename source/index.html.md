@@ -128,7 +128,7 @@ Parameter | Description
 location | The name of a store, shop, or specific zone/region to retrieve.
 date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
 
-## Get Discovery Traffic
+## Get Discovery Counts
 
 ```ruby
 require 'exteros'
@@ -193,7 +193,7 @@ Parameter | Description
 location | The name of a store, shop, or specific zone/region to retrieve.
 date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
 
-## Get Engagement Traffic
+## Get Engagement Counts
 
 ```ruby
 require 'exteros'
@@ -258,7 +258,7 @@ Parameter | Description
 location | The name of a store, shop, or specific zone/region to retrieve.
 date | Date of Customer Traffic to retrieve. Use format “yyyy-MM-dd".
 
-## Get Interaction Traffic
+## Get Interaction Counts
 
 ```ruby
 require 'exteros'

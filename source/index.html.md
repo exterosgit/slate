@@ -490,7 +490,7 @@ let exteros = api.exteros.get();
 ```json
 [
   {
-    "lastUpdate": "2020-05-30T09:30:10Z"
+    "last-update": "2020-05-30T09:30:10Z"
   }
 ]
 ```

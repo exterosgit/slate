@@ -52,7 +52,7 @@ let api = exteros.authorize('YOUR_API_KEY');
 
 > Make sure to replace `YOUR_API_KEY` with your API key.
 
-Exteros uses API keys to allow access to the API. You can register a new Exteros API key at our [developer portal](https://dashboard.exteros.com).
+Exteros uses API keys to allow access to the API. You can register a new Exteros API key at our [developer portal](https://developer.exteros.com). Authentication uses the OAuth 2.0 specification.
 
 Exteros expects for the API key to be included in all API requests to the server in a header that looks like the following:
 

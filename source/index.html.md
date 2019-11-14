@@ -70,14 +70,14 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 require 'exteros'
 
 api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
+api.v1.traffic.impression-counts.get
 ```
 
 ```python
 import exteros
 
 api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
+api.v1.traffic.impression-counts.get()
 ```
 
 ```shell
@@ -89,7 +89,7 @@ curl "https://api.exteros.com/v1/traffic/impression-counts/madison-ave-store/202
 const exteros = require('exteros');
 
 let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
+let impressionCounts = api.v1.traffic.impression-counts.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -154,14 +154,14 @@ date | Date of impression Traffic to retrieve. Use format “yyyy-MM-dd".
 require 'exteros'
 
 api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
+api.v1.traffic.discovery-counts.get
 ```
 
 ```python
 import exteros
 
 api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
+api.v1.traffic.discovery-counts.get()
 ```
 
 ```shell
@@ -173,7 +173,7 @@ curl "https://api.exteros.com/v1/traffic/discovery-counts/madison-ave-store/2020
 const exteros = require('exteros');
 
 let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
+let discoveryCounts = api.v1.traffic.discovery-counts.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -238,14 +238,14 @@ date | Date of discovery Traffic to retrieve. Use format “yyyy-MM-dd".
 require 'exteros'
 
 api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
+api.v1.traffic.engagement-counts.get
 ```
 
 ```python
 import exteros
 
 api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
+api.v1.traffic.engagement-counts.get()
 ```
 
 ```shell
@@ -257,7 +257,7 @@ curl "https://api.exteros.com/v1/traffic/engagement-counts/madison-ave-store/202
 const exteros = require('exteros');
 
 let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
+let engagementCounts = api.v1.traffic.engagement-counts.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -322,14 +322,14 @@ date | Date of engagement Traffic to retrieve. Use format “yyyy-MM-dd".
 require 'exteros'
 
 api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
+api.v1.traffic.interaction-counts.get
 ```
 
 ```python
 import exteros
 
 api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
+api.v1.traffic.interaction-counts.get()
 ```
 
 ```shell
@@ -341,7 +341,7 @@ curl "https://api.exteros.com/v1/traffic/interaction-counts/madison-ave-store/20
 const exteros = require('exteros');
 
 let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
+let interactionCounts = api.v1.traffic.interaction-counts.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -404,14 +404,14 @@ date | Date of interaction Traffic to retrieve. Use format “yyyy-MM-dd".
 require 'exteros'
 
 api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
+api.v1.locations.get
 ```
 
 ```python
 import exteros
 
 api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
+api.v1.locations.get()
 ```
 
 ```shell
@@ -423,7 +423,7 @@ curl "https://api.exteros.com/v1/locations"
 const exteros = require('exteros');
 
 let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
+let locationName = api.v1.locations.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -463,14 +463,14 @@ location | The name of a store, shop, or specific zone/region to retrieve.
 require 'exteros'
 
 api = Exteros::APIClient.authorize!('YOUR_API_KEY')
-api.exteros.get
+api.v1.locations.last-update.get
 ```
 
 ```python
 import exteros
 
 api = exteros.authorize('YOUR_API_KEY')
-api.exteros.get()
+api.v1.locations.last-update.get()
 ```
 
 ```shell
@@ -482,7 +482,7 @@ curl "https://api.exteros.com/v1/locations/last-update/madison-ave-store"
 const exteros = require('exteros');
 
 let api = exteros.authorize('YOUR_API_KEY');
-let exteros = api.exteros.get();
+let lastUpdate = api.v1.locations.last-update.get();
 ```
 
 > The above command returns JSON structured like this:

@@ -439,7 +439,7 @@ let exteros = api.exteros.get();
 ]
 ```
 
-This endpoint retrieves all customers.
+This endpoint retrieves all location names (stores, shops, or specific zones/regions).
 
 ### HTTP Request
 
@@ -495,7 +495,7 @@ let exteros = api.exteros.get();
 ]
 ```
 
-This endpoint retrieves all customers.
+This endpoint retrieves a date-time value (UTC) representing the date-time of the last data update for a specific location.
 
 ### HTTP Request
 
